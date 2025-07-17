@@ -136,10 +136,10 @@ unregister_chrdev:
 
 static void __exit moduleExit(void)
 {
-    device_destroy(myclass,new_dev);
-    cdev_del(&my_cdev);
-    class_destroy(myclass);
-    unregister_chrdev_region(new_dev,1);
+    device_destroy(myclass,new_dev); // 删除创建的具体的设备实例
+    cdev_del(&my_cdev); // 删除cdev结构体， 删除设备号与文件操作集的内核链接
+    class_destroy(myclass); // 删除设备类
+    unregister_chrdev_region(new_dev,1); // 释放动态分配的设备号
     printk(KERN_INFO "Goodbye Kernel, module is unloaded\n");
 }
 
