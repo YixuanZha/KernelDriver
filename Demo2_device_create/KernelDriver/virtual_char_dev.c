@@ -96,7 +96,7 @@ static int __init moduleInit(void)
     printk(KERN_INFO "Device number allocated, Major: %d, Minor: %d \n", MAJOR(new_dev), MINOR(new_dev));
 
     // 2. create device class
-    myclass = class_create("my_dev_class"); //在 /sys/class 下创建一个目录，用于存放后续创建的设备
+    myclass = class_create(THIS_MOUDLE,"my_dev_class"); //在 /sys/class 下创建一个目录，用于存放后续创建的设备
     if (IS_ERR(myclass))
     {
         printk(KERN_ERR "Failed to create device class\n");
