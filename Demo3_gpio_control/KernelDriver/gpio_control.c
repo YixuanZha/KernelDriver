@@ -3,7 +3,7 @@
 #include <linux/gpio.h>
 #include <linux/init.h>
 
-#define SYS_LED_GPIO 226
+#define SYS_LED_GPIO 76
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Yixuan Zha");
