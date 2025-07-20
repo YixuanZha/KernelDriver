@@ -1,4 +1,4 @@
-obj-m += virtual_char_dev.o
+obj-m += gpio_control.o
 
 all:
 		make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
